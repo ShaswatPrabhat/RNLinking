@@ -7,8 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
-import {StyleSheet, useColorScheme, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -23,9 +22,7 @@ function HomeScreen() {
 
 const Stack = createNativeStackNavigator();
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -34,24 +31,5 @@ const App: () => Node = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
